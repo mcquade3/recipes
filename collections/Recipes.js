@@ -9,6 +9,10 @@ Recipes.allow({
 	insert: function(userId, doc) {
 		console.log("Record inserted");
 		return !!userId;
+	},
+	update: function(userId, doc) {
+		console.log("Record updated");
+		return !!userId;
 	}
 });
 
@@ -79,3 +83,13 @@ Recipes.attachSchema(new SimpleSchema({
 		}
 	}
 }));
+
+Meteor.methods({
+	toggleMenuItem: function(id, currentState){
+		Recipes.update(id, {
+			$set: {
+				inMenu: !currentState
+			}
+		});
+	}
+});
