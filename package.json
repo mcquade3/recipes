@@ -1,6 +1,7 @@
 {
   "name": "recipes",
   "private": true,
+  "version": "8.9.0",
   "scripts": {
     "start": "meteor run"
   },
