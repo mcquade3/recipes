@@ -7,7 +7,7 @@ Template.RecipePage.onCreated(function(){
 });
 
 Template.RecipePage.helpers({
-	recipes:()=> {
+	recipe: ()=> {
 		var id = FlowRouter.getParam('id');
 		return Recipes.findOne({_id: id});
 	}
